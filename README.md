@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CourseGPT: AI-Powered Course Authoring Platform
+
+CourseGPT is an intelligent authoring tool that empowers educators and content creators to efficiently create, organize, and enhance educational content through AI-assisted content generation, structured templates, and intuitive organization tools.
+
+## Features
+
+- **AI-Powered Content Generation**: Generate complete lessons, learning objectives, and activities with advanced AI technology
+- **Modular Organization**: Organize your content into logical modules and lessons with intelligent sequencing
+- **Interactive Editor**: Fine-tune AI-generated content with our intuitive editing interface
+- **Educational Templates**: Start with professionally designed templates optimized for different learning contexts
+- **Comprehensive Activities**: Generate quizzes, discussions, assignments, and interactive exercises automatically
+
+## Technologies Used
+
+- **Frontend**: Next.js 15 with App Router, TypeScript, Tailwind CSS
+- **Backend**: Next.js API routes (serverless functions)
+- **Database**: MongoDB
+- **AI Integration**: OpenAI API
+- **Authentication**: NextAuth.js
+- **PWA Features**: Service workers, manifest file, offline capabilities
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js 18+ and npm
+- MongoDB database
+- OpenAI API key
+- Google OAuth credentials (optional, for social login)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   git clone https://github.com/yourusername/coursegpt.git
+   cd coursegpt
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Install dependencies:
+   npm install
 
-## Learn More
+3. Create a `.env.local` file in the root directory with the following variables:
+   MONGODB_URI=your-mongodb-connection-string
+   NEXTAUTH_URL=http://localhost:3000
+   NEXTAUTH_SECRET=your-nextauth-secret
+   GOOGLE_CLIENT_ID=your-google-client-id
+   GOOGLE_CLIENT_SECRET=your-google-client-secret
+   OPENAI_API_KEY=your-openai-api-key
 
-To learn more about Next.js, take a look at the following resources:
+4. Run the development server:
+   npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+The application is deployed on Vercel. To deploy your own instance:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push your code to a GitHub repository
+2. Import the project in Vercel
+3. Configure the environment variables in the Vercel dashboard
+4. Deploy!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Usage
+
+1. Sign in to your account
+2. Create a new course by providing basic information
+3. Generate module structure using AI
+4. Add lessons to modules with AI assistance
+5. Edit and refine the generated content
+6. Organize your course structure as needed
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+### Platform Overview
+
+CourseGPT platform with the following features:
+
+AI-Powered Content Generation: The platform uses OpenAI's API to generate educational content, including lesson structures, learning outcomes, and activities.
+
+Modular Course Organization: Users can create courses with modules and lessons in a hierarchical structure.
+
+Interactive Content Editor: The platform includes a rich editor for refining AI-generated content with real-time preview.
+
+User Authentication: Secure user accounts with NextAuth.js, supporting both credential and social logins.
+
+Responsive Design: The UI is fully responsive and works on all device sizes.
+
+Progressive Web App: The application functions as a PWA with offline capabilities.
+
+Database Integration: MongoDB is used for storing course content and user data.
+
+This implementation provides a solid foundation that can be extended with additional features like:
+
+Collaborative editing
+
+Content export options (PDF, SCORM, etc.)
+
+More advanced AI-powered features like content recommendations
+
+Analytics and insights on course effectiveness
+
+Integration with LMS platforms
+
+The modular architecture makes it easy to add these features in the future.
