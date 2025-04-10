@@ -1,103 +1,205 @@
-import Image from "next/image";
+import Link from "next/link";
+import { FiArrowRight, FiBook, FiLayers, FiEdit3, FiCpu } from "react-icons/fi";
+import MainLayout from "@/components/layout/MainLayout";
+import Button from "@/components/ui/Button";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <MainLayout>
+      {/* Hero Section */}
+      <section className="bg-gradient-to-b from-indigo-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <div className="text-center">
+            <h1
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight"
+              data-aos="fade-up"
+            >
+              Create Courses with <span className="text-indigo-600">AI</span>{" "}
+              Assistance
+            </h1>
+            <p
+              className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              CourseGPT helps educators and content creators build high-quality
+              educational content in minutes, not hours. Transform your
+              expertise into engaging learning experiences.
+            </p>
+            <div
+              className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <Link href="/dashboard">
+                <Button
+                  size="lg"
+                  variant="primary"
+                  rightIcon={<FiArrowRight />}
+                >
+                  Get Started
+                </Button>
+              </Link>
+              <Link href="/features">
+                <Button size="lg" variant="outline">
+                  Learn More
+                </Button>
+              </Link>
+            </div>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <div
+            className="mt-16 relative"
+            data-aos="zoom-in"
+            data-aos-delay="300"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div className="relative rounded-xl overflow-hidden shadow-2xl">
+              <img
+                src="/images/hero-screenshot.png"
+                alt="CourseGPT Platform Screenshot"
+                className="w-full"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2
+              className="text-3xl md:text-4xl font-bold text-gray-900"
+              data-aos="fade-up"
+            >
+              Powerful Features for Course Creation
+            </h2>
+            <p
+              className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              Everything you need to create professional educational content
+              quickly and efficiently.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+              className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all hover:shadow-md"
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-4">
+                <FiCpu className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                AI-Powered Generation
+              </h3>
+              <p className="text-gray-600">
+                Generate complete lessons, learning objectives, and activities
+                with advanced AI technology.
+              </p>
+            </div>
+
+            <div
+              className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all hover:shadow-md"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-4">
+                <FiLayers className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Modular Organization
+              </h3>
+              <p className="text-gray-600">
+                Organize your content into logical modules and lessons with
+                intelligent sequencing.
+              </p>
+            </div>
+
+            <div
+              className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all hover:shadow-md"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-4">
+                <FiEdit3 className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Interactive Editor
+              </h3>
+              <p className="text-gray-600">
+                Fine-tune AI-generated content with our intuitive editing
+                interface designed for educators.
+              </p>
+            </div>
+
+            <div
+              className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all hover:shadow-md"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-4">
+                <FiBook className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Educational Templates
+              </h3>
+              <p className="text-gray-600">
+                Start with professionally designed templates optimized for
+                different learning contexts.
+              </p>
+            </div>
+
+            <div
+              className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all hover:shadow-md md:col-span-2 lg:col-span-1"
+              data-aos="fade-up"
+              data-aos-delay="350"
+            >
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-4">
+                <FiLayers className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Comprehensive Activities
+              </h3>
+              <p className="text-gray-600">
+                Generate quizzes, discussions, assignments, and interactive
+                exercises automatically.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-indigo-600 py-16">
+        <div
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+          data-aos="fade-up"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <h2 className="text-3xl font-bold text-white">
+            Ready to transform your course creation process?
+          </h2>
+          <p className="mt-4 text-xl text-indigo-100 max-w-3xl mx-auto">
+            Join thousands of educators who are saving time and creating better
+            learning experiences.
+          </p>
+          <div className="mt-8">
+            <Link href="/dashboard">
+              <Button
+                size="lg"
+                className="bg-white text-indigo-600 hover:bg-indigo-50"
+                rightIcon={<FiArrowRight />}
+              >
+                Get Started for Free
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </MainLayout>
   );
 }
